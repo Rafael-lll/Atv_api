@@ -11,7 +11,7 @@ const produtos: Produto[] =[];
 
 
 
-function NovoProduto(req: Request, res: Response):void{
+function novoProduto(req: Request, res: Response):void{
     try{
         let data:any = req.body;
 
@@ -137,7 +137,7 @@ function removerPorID(req: Request, res: Response): void{
 appPapelaria.delete('/Atv_api_papelaria/produto/:id', removerPorID);
 appPapelaria.put('/Atv_api_papelaria/produto/:id', atualizarProduto);
 appPapelaria.get('/Atv_api_papelaria/produto', listarProdutos);
-appPapelaria.post('/Atv_api_papelaria/produto', NovoProduto);
+appPapelaria.post('/Atv_api_papelaria/produto', novoProduto);
 appPapelaria.get('/Atv_api_papelaria/produto/:id', filtrarPorId);
 
 appPapelaria.listen(PORT, () => console.log(`API rodando na URL : http://localhost:${PORT}`));
